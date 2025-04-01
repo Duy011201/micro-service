@@ -10,6 +10,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -29,4 +32,11 @@ public class RoleDto extends BaseDto {
     @Column(name = "roleCode")
     @Size(max = 255, message = "Role code should be between 4 and 255 characters")
     private String roleCode;
+
+    @NotBlank
+    @Size(max = 255, message = "Description should be between 4 and 255 characters")
+    @Column(name = "description")
+    private String description;
+
+    private Set<PermissionDto> listPermission = new HashSet<>();
 }

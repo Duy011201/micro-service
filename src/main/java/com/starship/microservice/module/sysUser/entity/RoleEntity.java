@@ -36,4 +36,9 @@ public class RoleEntity extends BaseEntity {
     @Size(max = 255, message = "Role code should be between 4 and 255 characters")
     @Column(name = "roleCode")
     private String roleCode;
+
+    @NotBlank
+    @Size(max = 255, message = "Description should be between 4 and 255 characters")
+    @Column(name = "description")
+    private String description;
 }
